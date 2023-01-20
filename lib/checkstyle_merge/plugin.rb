@@ -1,4 +1,5 @@
 require 'ox'
+require 'fileutils'
 
 # frozen_string_literal: true
 
@@ -51,6 +52,10 @@ module Danger
       # doc.root = <checkstyle element
       docs.flat_map { |doc| doc.root&.nodes || [] }
           .each { |issue| output_doc.root << issue }
+
+      output_dir = File.dirname(output_path)
+
+      FileUtils.mkdir_p(output_dir) unless File.exist? output_dir
 
       Ox.to_file(output_path, output_doc, {})
     end
