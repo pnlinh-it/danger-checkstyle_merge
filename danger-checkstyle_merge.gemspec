@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["pnlinh.it@gmail.com"]
   spec.description   = "A short description of danger-checkstyle_merge."
   spec.summary       = "A longer description of danger-checkstyle_merge."
-  spec.homepage      = "https://github.com/Phạm Linh/danger-checkstyle_merge"
+  spec.homepage      = "https://github.com/pnlinh-it/danger-checkstyle_merge"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "danger-plugin-api", "~> 1.0"
+  spec.add_runtime_dependency 'ox', '~> 2.0'
 
   # General ruby development
   spec.add_development_dependency "bundler", "~> 2.0"

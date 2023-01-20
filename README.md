@@ -3,15 +3,27 @@
 A description of danger-checkstyle_merge.
 
 ## Installation
-
-    $ gem install danger-checkstyle_merge
+```sh
+gem install danger-checkstyle_merge
+```
+Or
+```ruby
+source "https://rubygems.pkg.github.com/pnlinh-it" do
+  gem "danger-checkstyle_merge", "0.0.1"
+end
+```
 
 ## Usage
-
-    Methods and attributes from this plugin are available in
-    your `Dangerfile` under the `checkstyle_merge` namespace.
+```ruby
+files = Dir['/Users/pnlinh/Desktop/Dev/Android/android-boilerplate/**/reports/ktlint/ktlintMainSourceSetCheck.xml']
+output = 'ktlintMainSourceSetCheck.xml'
+checkstyle_merge.merge(files, output)
+```
 
 ## Development
+- Use `exec danger local` in case already have PR
+- Or use: `exec danger pr https://github.com/pnlinh-it/danger-checkstyle_merge/pull/1`
+- ![](image/debug.png)
 
 1. Clone this repo
 2. Run `bundle install` to setup dependencies.
